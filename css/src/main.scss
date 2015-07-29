@@ -2,12 +2,13 @@
 
 // color variables
 $grey: #414042;
-$blue: #0569B2;
-$blue-dark: #214099;
+$blue: #005388;
 $teal: #27AAE1;
 $green: #66BD5A;
 $lime: #8DC63F;
 $yellow: #FFF200;
+$tan: #DFD7CD;
+$red: #D63D41;
 
 
 @import "reset";
@@ -36,37 +37,12 @@ $yellow: #FFF200;
 // header styles
 header {
 	position: relative;
-	background: $blue url(../img/bg-header.jpg) top center repeat-x;
-	background-size: cover;
+	background-color: $tan;
 	text-align: center;
+	border-bottom: 15px solid $red;
 
 	img {
 		display: block;
-	}
-	
-	.wrap {
-		height: 250px;
-
-		.header {
-			background-color: white;
-			border: 8px solid $blue;
-			box-shadow: 5px 5px 15px rgba( 0, 0, 0, .5 );
-			width: 220px;
-			position: absolute;
-			bottom: -20px;
-			left: 50%;
-			margin-left: -110px;
-
-			@include respond-to( 600px ) {
-				left: 30px;
-				margin-left: 0;
-				width: 300px;
-			}
-		}
-
-		@include respond-to( 600px ) {
-			height: 500px;
-		}
 	}
 }
 
@@ -81,27 +57,9 @@ header {
 
 
 
-// top border
-.top-border {
-	background: $lime url(../img/bg-overlay.png) top center no-repeat;
-	background-size: cover;
-	height: 35px;
-
-	@include respond-to( 600px ) {
-		height: 45px;
-	}
-
-	@include respond-to( 900px ) {
-		height: 55px;
-	}
-}
-
-
-
 // main content container
 .main {
-	background: $blue url(../img/bg-overlay.png) top center repeat-y;
-	background-size: contain;
+	background: $blue;
 }
 
 
@@ -115,24 +73,24 @@ header {
 
 // intro styles
 .intro {	
-	.thermometer {
-		float: right;
-		margin-left: 20px;
-	}
-	
 	@include font-title-light;
-	font-size: 1.6em;
+	font-size: 1.5em;
 	line-height: 1.7em;
+	text-align: center;
+
+	&.pad {
+		padding: 15px 20px;
+	}
 }
 
 
 
 // colors
 .bg-blue { background: $blue; }
-.bg-blue-dark { background: $blue-dark; }
 .bg-teal { background: $teal; }
 .bg-green { background: $green; }
 .bg-lime { background: $lime; }
+.bg-red { background: $red; }
 
 
 
@@ -206,8 +164,8 @@ header {
 input[type=submit], button, .btn {
 	@include font-title;
 	padding: 15px;
-	background: $lime;
-	color: $blue-dark;
+	background: $red;
+	color: white;
 	border: 0;
 	border-radius: 10px;
 	font-size: 2em;
@@ -219,21 +177,18 @@ input[type=submit], button, .btn {
 	text-align: center;
 	position: relative;
 	margin: 10px auto;
-
+	
 	span {
 		display: block;
 	}
-	
-	&:after {
-		content: "";
-		position: absolute;
-		right: 5px;
-		top: 50%;
-		width: 30px;
-		height: 30px;
-		margin-top: -15px;
-	}
 
+	&.calculate {
+		background: $red url(../img/bg-button.png) center center no-repeat;
+		background-size: contain;
+		color: transparent;
+		padding: 30px 20px;
+	}
+	
 	&:hover {
 		opacity: .9;
 	}
@@ -245,7 +200,7 @@ input[type=submit], button, .btn {
 	}
 
 	@include respond-to( 768px ) {
-		max-width: 50%;
+		max-width: 40%;
 		margin: 30px auto;
 	}
 }

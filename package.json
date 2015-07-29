@@ -1,5 +1,5 @@
 {
-    "name" : "my-pal-saves",
+    "name" : "smart-saves-more",
     "version" : "1.0.0",
     "devDependencies" : {
         "grunt":                        "latest",
