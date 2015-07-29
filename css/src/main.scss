@@ -188,6 +188,12 @@ input[type=submit], button, .btn {
 		color: transparent;
 		padding: 30px 20px;
 	}
+
+	&.apply {
+		background: $red url(../img/bg-apply.png) center center no-repeat;
+		background-size: contain;
+		color: transparent;
+	}
 	
 	&:hover {
 		opacity: .9;
@@ -200,7 +206,7 @@ input[type=submit], button, .btn {
 	}
 
 	@include respond-to( 768px ) {
-		max-width: 40%;
+		max-width: 45%;
 		margin: 30px auto;
 	}
 }
