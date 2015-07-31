@@ -3,12 +3,14 @@
 $(function(){
 	
 	var recalculate_total = function(){
-		var total = parseFloat( typeof( $(".result.home").html() )!=="undefined" ? $(".result.home").html().replace("$","").replace(",","") : 0 )+
-			parseFloat( typeof( $(".result.loan-auto").html() )!=="undefined" ? $(".result.loan-auto").html().replace("$","").replace(",","") : 0 );
+		var total = parseFloat( typeof( $(".result.loan-auto").html() )!=="undefined" ? $(".result.loan-auto").html().replace("$","").replace(",","") : 0 );
 		if ( total>0 ) {
 			$(".result.total").html(""+total.toFixed(2));
 		}
 	};
+
+	/*
+	parseFloat( typeof( $(".result.home").html() )!=="undefined" ? $(".result.home").html().replace("$","").replace(",","") : 0 )+
 
 	$(".calculator.home").accrue({
 		mode: "compare",
@@ -21,17 +23,13 @@ $(function(){
 			}
 		}
 	});
+	*/
 
 	$(".calculator.loan-auto").accrue({
 		mode: "compare",
-		response_output_div: ".result.loan-auto",
+		response_output_div: ".result.total",
 		response_compare:"%savings%",
-		error_text:"0",
-		callback: function( elem, data ){
-			if ( data!==0 ) {
-				recalculate_total();
-			}
-		}
+		error_text:"0"
 	});
 
 	$(".numbers-only").keyup(function(){
