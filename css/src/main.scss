@@ -1,15 +1,6 @@
 
 
-// color variables
-$grey: #414042;
-$blue: #005388;
-$teal: #27AAE1;
-$green: #66BD5A;
-$lime: #8DC63F;
-$yellow: #FFF200;
-$tan: #DFD7CD;
-$red: #D63D41;
-
+@import "color";
 
 @import "reset";
 
@@ -25,8 +16,14 @@ $red: #D63D41;
 
 // background-container
 .container {
-	background: white;
-	padding-bottom: 40px;
+	background: url(../img/bg-overlay.jpg) center center no-repeat;
+	background-size: cover;
+
+	@include respond-to( 1100px ) {
+		border-left: 2px solid rgba( $blue, .2 );
+		border-right: 2px solid rgba( $blue, .2 );
+		box-shadow: 0 0 60px rgba( $grey, .2 );	
+	}
 
 	@include respond-to( 1220px ) {
 		padding-bottom: 20px;
@@ -37,12 +34,60 @@ $red: #D63D41;
 // header styles
 header {
 	position: relative;
-	background-color: $tan;
 	text-align: center;
-	border-bottom: 15px solid $red;
 
 	img {
 		display: block;
+
+		&.large {
+			display: none;
+		}
+	
+		@include respond-to( 768px ) {
+			&.small {
+				display: none
+			}
+
+			&.large {
+				display: block;
+			}
+		}
+	}
+
+	.buttons {
+		text-align: center;
+		padding: 15px;
+		@include clearfix;
+
+		img {
+			margin: 5px 0;
+			opacity: 1;
+			transition: 300ms opacity ease-in-out;
+			width: 100%;
+
+			&:hover {
+				opacity: .8;
+			}
+
+			@include respond-to( 480px ) {
+				width: 48%;
+				margin: 5px 1%;
+				float: left;
+			}
+
+			@include respond-to( 768px ) {
+				width: auto;
+				float: none;
+				margin: 5px 0;
+			}
+		}
+
+		@include respond-to( 768px ) {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 38%;
+		}	
 	}
 }
 
@@ -53,13 +98,6 @@ header {
 	margin: 0 auto;
 	position: relative;
 	@include clearfix;
-}
-
-
-
-// main content container
-.main {
-	background: $blue;
 }
 
 
@@ -82,89 +120,126 @@ header {
 
 
 
-// intro styles
-.intro {	
-	@include font-title-light;
-	font-size: 1.5em;
-	line-height: 1.7em;
-	text-align: center;
-
-	&.pad {
-		padding: 15px 20px;
-	}
-}
-
-
-
-// colors
-.bg-blue { background: $blue; }
-.bg-teal { background: $teal; }
-.bg-green { background: $green; }
-.bg-lime { background: $lime; }
-.bg-red { background: $red; }
-
-
-
-// tool styles
-.tool {
-	padding: 0;
-	color: white;
+.main {
+	max-width: 850px;
+	margin: 0 auto;
 	
-	@include respond-to( 768px ) {
-		padding: 20px 40px;
-	}
-
-	.calculator {
-		padding: 10px 15px 10px;
-		@include font-title;
-
-		button, input[type=submit], .btn {
-			width: 100%;
-			margin: 0 auto;
-		}
-		
-		@include respond-to( 768px ) { 
-			margin-top: 30px;
-			border-radius: 20px;
-			font-size: 1.2em;
-
-			img {
-				margin-top: 20px;
-			}
-		}
-	}
-}
-
-
-
-// results styles
-.results {
-	display: none;
-	text-align: center;
-	@extend .pad;
-	color: white;
-
-	// large title
-	h2 {
-		@include font;
-		font-size: 1.8em;
-		color: $yellow;
+	.title {
+		padding: 20px;
+		padding-bottom: 10px;
 
 		@include respond-to( 768px ) {
-			font-size: 3em;
-			padding: 10px 20px;
+			img {
+				max-width: 60%;
+				float: left;
+			}
+
+			h3 {
+				float: right;
+				padding: 23px 0 0 0;
+				font-size: 20px;
+			}
+		}
+
+		@include respond-to( 920px ) {
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 
-	p {
-		font-size: 1.2em;
+	section {
+		margin-bottom: 60px;
 
-		strong {
-			font-size: 1.4em;
+		.result {
+			background: rgba( white, .8 );
+			border-radius: 20px;
+			padding: 20px;
+			text-align: center;
+			
+			@include respond-to( 768px ) {
+				padding: 30px 40px;
+				margin-top: 30px;
+			}
+
+			h3, p {
+				padding: 0;
+			}
+
+			h3 {
+				font-size: 1.8em;
+			}
+
+			p {
+				font-size: 1.2em;
+			}
 		}
 
-		&.larger {
-			font-size: 1.4em;
+		&.bg-blue .btn { margin: 0; }
+
+		&.bg-red { border-top: 40px solid $red; }
+		&.bg-grey { border-top: 40px solid $grey; }
+		&.bg-green { border-top: 40px solid $green; }
+		&.bg-lime { border-top: 40px solid $lime; }
+		&.bg-tan { border-top: 40px solid $tan; }
+
+		@include respond-to( 768px ) {	
+			margin-bottom: 80px;
+
+			&.bg-red { border-top: 50px solid $red; }
+			&.bg-grey { border-top: 50px solid $grey; }
+			&.bg-green { border-top: 50px solid $green; }
+			&.bg-lime { border-top: 50px solid $lime; }
+			&.bg-tan { border-top: 50px solid $tan; }
+		}
+
+		@include respond-to( 1024px ) {	
+			&.bg-red { border-top: 60px solid $red; }
+			&.bg-grey { border-top: 60px solid $grey; }
+			&.bg-green { border-top: 60px solid $green; }
+			&.bg-lime { border-top: 60px solid $lime; }
+			&.bg-tan { border-top: 60px solid $tan; }
+		}
+
+		table {
+			width: 100%;
+
+			tr {
+				th {
+					background: $blue;
+					color: white;
+					text-transform: uppercase;
+					font-size: 1.2em;
+					padding: 15px;
+					text-align: center;
+				}
+
+				td {
+					padding: 10px;
+					text-align: center;
+					vertical-align: middle;
+					font-weight: bold;
+
+					@include respond-to( 480px ) {
+						font-size: 1.8em;
+					}
+
+					@include respond-to( 768px ) {
+						padding: 10px 20px;
+					}
+
+					&.bal {
+						background: rgba( $blue, .2 );
+					}
+				}
+
+				&.even td {
+					background: $blue-light;
+
+					&.bal {
+						background: rgba( $blue, .4 );
+					}
+				}
+			}
 		}
 	}
 }
@@ -174,52 +249,53 @@ header {
 // button styles
 input[type=submit], button, .btn {
 	@include font-title;
-	padding: 15px;
+	padding: 15px 35px 15px 15px;
 	background: $red;
 	color: white;
 	border: 0;
-	border-radius: 10px;
-	font-size: 2em;
+	font-size: 1.8em;
 	line-height: 1.4em;
 	text-transform: uppercase;
 	display: block;
-	width: 90%;
+	width: 100%;
 	cursor: pointer;
 	text-align: center;
 	position: relative;
-	margin: 10px auto;
-	
-	span {
-		display: block;
-	}
-
-	&.calculate {
-		background: $red url(../img/bg-button.png) center center no-repeat;
-		background-size: contain;
-		color: transparent;
-		padding: 30px 20px;
-	}
-
-	&.apply {
-		background: $red url(../img/bg-apply.png) center center no-repeat;
-		background-size: contain;
-		color: transparent;
-	}
-	
-	&:hover {
-		opacity: .9;
-	}
-
-	&.go-back {
-		background: lighten( $grey, 20% );
-		font-size: 1.5em;
-		color: white;
-	}
+	margin: 10px 0 0;
+	transition: 400ms opacity ease-in-out;
+	opacity: 1;
 
 	@include respond-to( 768px ) {
-		max-width: 45%;
-		margin: 30px auto;
+		padding-right: 50px;
 	}
+
+	&:hover {
+		color: white;
+		opacity: .8;
+	}
+
+	&:after {
+		content: '';
+		background: url(../img/button-arrow.png) center center;
+		display: inline-block;
+		height: 25px;
+		width: 25px;
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		margin-top: -12.5px;
+
+		@include respond-to( 768px ) {
+			right: 30px;
+		}
+	}
+
+	.bg-blue & { background: $blue; }
+	.bg-teal & { background: $teal; }
+	.bg-yellow & { background: $yellow; }
+	.bg-green & { background: $green; }
+	.bg-grey & { background: $grey; }
+	.bg-tan & { background: $tan; color: darken( $tan, 40% ); }
 }
 
 
@@ -229,39 +305,30 @@ input[type=submit], button, .btn {
 	padding: 20px;
 	text-align: center;
 
-	&, a {
-		color: $grey;
-	}
+	a {
+		transition: 400ms opacity ease-in-out;
+		opacity: .7;
 
-	h2 {
-		@include font;
+		&:hover {
+			opacity: 1;
+		}
 	}
-
-	h2 {
-		font-size: 2.4em;
-		line-height: 100px;
-		text-transform: uppercase;
-	}
-
-	h4 {
-		font-size: 17px;
-		@include respond-to( 800px ) { font-size: 26px; }
-	}
-
-	.sixty, .fourty {
-		text-align: center;
-	}
-
 }
 
 
 
 .fine-print {
-	background: white;
-	padding: 0 20px;
-	font-size: .8em;
+	padding: 0 30px 30px;
+	font-size: .75em;
 	line-height: 1.3em;
 	text-align: left;
+	color: black;
+	transition: 400ms opacity ease-in-out;
+	opacity: .4;
+
+	&:hover {
+		opacity: 1;
+	}
 
 	img {
 		float: right;

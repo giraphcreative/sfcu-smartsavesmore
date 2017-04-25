@@ -10,118 +10,157 @@
 	<script src="js/head.js"></script>
 </head>
 <body>
+	<div class="wrap">
 	<main class="container">
 		
 		<header>
-			<div class="wrap">
-				<img src="img/header.png" class="header">
+			<img src="img/header-small.png" class="small">
+			<img src="img/header.png" class="large">
+			<div class="buttons">
+				<a href="#checking"><img src="img/button-checking.png" /></a>
+				<a href="#auto"><img src="img/button-auto.png" /></a>
+				<a href="#home"><img src="img/button-home-equity.png" /></a>
+				<a href="#choice"><img src="img/button-choice.png" /></a>
 			</div>
 		</header>
 		
 		<div class="main">
-
-			<div class="top-border">&nbsp;</div>
-
-			<div class="wrap">
-
-				<div class="tool group">
-	
-					<div class="group">
-						<div class="savings-thermometer white" data-giraph-api-key="f82a6c3829d59ff0755bf4e6427ab9f6"></div>
-						<script src="//giraph.io/api/thermometer/v1/js/widget.js"></script>
-						<div class="intro pad">
-								<p>Our goal is to help our community make SMART financial choices and save our members $100,000 in interest and fees this year.</p>
-						</div>
-					</div>
-
-					<div class="loan-auto calculator bg-red">
-						<div class="third">
-							<img src="img/rate-auto.png">
-						</div>
-						<div class="third">
-							<p><label for="amount">your current balance</label><input type="text" placeholder="7,500" class="amount" /></p>
-							<p><label for="rate">your current rate</label><input type="text" placeholder="8.99" class="rate percent" /></p>
-							<input type="hidden" class="rate_compare" value="2.99%" />
-						</div>
-						<div class="third">
-							<p><label for="term">your current term</label>
-								<select class="term">
-									<option value="12m">12 mo.</option>
-									<option value="24m">24 mo.</option>
-									<option value="36m">36 mo.</option>
-									<option value="48m">48 mo.</option>
-									<option value="60m">60 mo.</option>
-									<option value="72m">72 mo.</option>
-									<option value="84m">84 mo.</option>
-								</select>
-							</p>
-						</div>
-						<div class="group"></div>
-					</div>
-					
-					<!--
-					<div class="home calculator bg-teal">
-						<div class="fourty">
-							<img src="img/rate-home.png">
-						</div>
-						<div class="thirty">
-							<p><label for="amount">your current balance</label><input type="text" placeholder="7,500" class="amount" /></p>
-							<p><label for="rate">your current rate</label><input type="text" placeholder="10.5" class="rate percent" /></p>
-							<input type="hidden" class="rate_compare" value="1.99" />
-						</div>
-						<div class="thirty">
-							<p><label for="term">your current term</label>
-								<select class="term">
-									<option value="10y">10 yr</option>
-									<option value="15y">15 yr</option>
-									<option value="20y">20 yr</option>
-									<option value="25y">25 yr</option>
-									<option value="30y">30 yr</option>
-								</select>
-							</p>
-						</div>
-						<div class="group"></div>
-					</div>
-					-->
-
-					<button class="calculate">Calculate</button>
-
-				</div>
-
-				<div class="results">
-
-					<h2>Congratulations!</h2>
-					<p class="larger">You could save up to <strong>$<span class="result total"></span></strong>.</p>
-					<!--<p>Save up to <strong>$<span class="result loan-auto"></span></strong> on your <strong>Auto Loan</strong>.</p>
-					<p>Save up to <strong>$<span class="result home"></span></strong> on your <strong>Home Equity Loan</strong>.</p>-->
-					<p>Additional savings may be possible! Contact us for details.</p>
-					<div class="text-center pad">
-						<a href="https://loans.itsme247.com/183/Home/Start/" class="btn apply" onClick="_gaq.push(['_trackEvent', 'Apply', 'Click', 'Clicked Apply Button']);">Apply <span>Now!</span></span></a>
-						<a class="btn go-back">&laquo; go back</a>
-					</div>
-
-				</div>
-	
+			
+			<div class="group title" id="checking">
+				<img src="img/title-checking.png">
+				<h3 class="text-blue">Compare and save!</h3>
 			</div>
+			<section class="bg-blue">
+				<table cellpadding=0 cellspacing=0 border=0>
+					<tr>
+						<th width="30%">&nbsp;</th>
+						<th width="35%">Min. Balance</th>
+						<th width="35%">Est. Monthly Fee</th>
+					</tr>
+					<tr>
+						<td><img src="img/logo-usbank.png" /></td>
+						<td class="bal">$1500</td>
+						<td>$6.95</td>
+					</tr>
+					<tr class="even">
+						<td><img src="img/logo-fifth-third.png" /></td>
+						<td class="bal">$1500</td>
+						<td>$8</td>
+					</tr>
+					<tr>
+						<td><img src="img/logo-pnc.png" /></td>
+						<td class="bal">$500</td>
+						<td>$7</td>
+					</tr>
+					<tr class="even">
+						<td><img src="img/logo-chase.png" /></td>
+						<td class="bal">$1500</td>
+						<td>$12</td>
+					</tr>
+					<tr>
+						<td><img src="img/logo.png" /></td>
+						<td class="bal text-red">$0</td>
+						<td class="text-red">$0</td>
+					</tr>
+				</table>
+				<a href="#" class="btn">Learn more about Smart Checking</a>
+			</section>
+
+
+			<div class="group title" id="auto">
+				<img src="img/title-auto.png">
+				<h3 class="text-red">See how much you can save!</h3>
+			</div>
+			<section class="auto calculator bg-red">
+				<div class="group">
+					<div class="half">
+						<p><label for="amount">your current balance</label><input type="text" placeholder="7,500" class="amount" /></p>
+						<p><label for="rate">your current rate</label><input type="text" placeholder="8.99" class="rate percent" /></p>
+						<input type="hidden" class="rate_compare" value="2.65" />
+						<p><label for="term">your current term</label>
+							<select class="term">
+								<option value="12m">12 mo.</option>
+								<option value="24m">24 mo.</option>
+								<option value="36m">36 mo.</option>
+								<option value="48m">48 mo.</option>
+								<option value="60m">60 mo.</option>
+								<option value="72m">72 mo.</option>
+								<option value="84m">84 mo.</option>
+							</select>
+						</p>
+					</div>
+					<div class="half">
+						<div class="result auto"></div>
+					</div>
+				</div>
+				<a href="#" class="btn">Learn more about Auto Loans</a>
+			</section>
+
+			
+			<div class="group title" id="home">
+				<img src="img/title-home.png">
+				<h3 class="text-grey">See how much you can save!</h3>
+			</div>
+			<section class="home calculator bg-grey group">
+				<div class="group">
+					<div class="half">
+						<p><label for="amount">your current balance</label><input type="text" placeholder="7,500" class="amount" /></p>
+						<p><label for="rate">your current rate</label><input type="text" placeholder="10.5" class="rate percent" /></p>
+						<input type="hidden" class="rate_compare" value="3.65" />
+						<p><label for="term">your current term</label>
+							<select class="term">
+								<option value="5y">5 yr</option>
+								<option value="10y">10 yr</option>
+								<option value="15y">15 yr</option>
+								<option value="20y">20 yr</option>
+								<option value="25y">25 yr</option>
+								<option value="30y">30 yr</option>
+							</select>
+						</p>
+					</div>
+					<div class="half">
+						<div class="result home"></div>
+					</div>
+				</div>
+				<a href="#" class="btn">Learn more about Home Equity Loans</a>
+			</section>
+
+
+			<div class="group title" id="choice">
+				<img src="img/title-choice.png">
+				<h3 class="text-tan">Connect with us!</h3>
+			</div>
+			<section class="contact bg-tan group">
+				<form id="contact" name="contact">
+					<div class="error"></div>
+					<div class="group">
+						<div class="half">
+							<p><label for="name">your name</label><input type="text" name="name" placeholder="John Smith" class="name" /></p>
+							<p><label for="email">your email</label><input type="text" name="email" placeholder="john@smith.com" class="email" /></p>
+							<p><label for="phone">your phone number</label><input type="text" name="phone" placeholder="123-456-7890" class="phone" /></p>
+						</div>
+						<div class="half">
+							<p><label for="message">your message</label><textarea name="message" placeholder="" class="message"></textarea></p>
+						</div>
+					</div>
+					<input type="submit" class="btn" value="Submit Request" />
+				</form>
+			</section>
 
 		</div>
 
 		<div class="footer-bar group">
-			<div class="wrap">
-
-				<div class="half separator">
-					<a href="https://www.smartfedcu.com/"><img src="img/logo.png"></a>
-				</div>
-				<div class="half">
-					<h2>614-261-0650</h2>
-				</div>
-
+			<div class="half separator">
+				<a href="https://www.smartfedcu.com/"><img src="img/logo.png"></a>
+			</div>
+			<div class="half">
+				<a href="tel:6142610650"><img src="img/phone.png"></a>
 			</div>
 		</div>
 
 		<div class="fine-print group wrap">
 			<img src="img/logo-equal-opportunity.png" class="equal-opportunity">
-			• APR = Annual Percentage Rate. Rate (2.99%) is as of 4/19/17 and subject to change at any time without notice. Rates based on creditworthiness and other factors. Contact credit union for your qualifying rate. For complete details contact the credit union. Savings data from Credit Union National Association Member Benefit Report. 
+			* Checking comparisons were obtained through the NerdWallet.com checking account comparison tool as of April 1,2017 and assumes an average monthly balance of $0 and no direct deposit. Calculator represents best case scenerio.  Your actual savings may vary.  See credit union for details. APR = Annual Percentage Rate. Rate based on term and other factors and subject to creditworthiness. Property insurance is required prior to loan closing. Rates, terms, conditions and services subject to change. Not all borrowers will qualify for the lowest rate. Interest savings are for example only. Your actual savings may vary. Payment example based on comparison to average credit card rate (Bankrate.com on 3/29/17) vs. amount borrowed for 180 months. Advertised rate available on Home Equity Lines with an 80% or less loan-to-value (LTV). Offer available for new applications submitted May 1 - July 31, 2017. Home Equity: APR is variable and based on the  6 month T-Bill (Auction Average Index), adjusted every three months. Higher rates may apply due to an increase in the T-Bill and/or your individual credit. As of 4/18/17 the minimum APR is 3.65%, maximum is 18.00%. Membership eligibility required. Contact the credit union for additional details.  This credit union is federally insured by the National Credit Union Administration. 
 		</div>
 
 	</main>

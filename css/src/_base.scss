@@ -4,7 +4,7 @@ body {
 	font-size: 85%;
 	line-height: 1.5em;
 	color: $blue;
-	background-color: #eee;
+	background-color: white;
 	
 	@include respond-to( 1024px ) {
 		font-size: 100%;
@@ -61,7 +61,7 @@ strong {
 	@include font-bold;
 }
 
-input[type=text], select {
+input[type=text], select, textarea {
 	display: block;
 	width: 100%;
 	padding: 14px 20px;
@@ -73,6 +73,7 @@ input[type=text], select {
 	border-radius: 15px;
 	-webkit-appearance: none;
 	background: white;
+	color: $grey;
 
 	&.amount {
 		background: white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAeBAMAAACcf1DPAAAAIVBMVEUAAACkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT7b4aZAAAACnRSTlMAm4ApQMYQ3W1QNQOf6wAAAIRJREFUKM9joA3gVMMlw7qEZJmkqlXLG7BJsFWtWrVKAJsM46pKl4kTsMlwrXLAYQ3XchCJXY8BkMRuz6IE7DLMq1YtxKErESiFQ5fRqlUBOKxiWrUYl/ukFuGS6cIpE4VVhiOBgQO7PVarQnGEddcqoH+w2sGiGLXQgHrpgIHZjYGWAADGBCLRA4y1vAAAAABJRU5ErkJggg==') left center no-repeat;
@@ -82,7 +83,10 @@ input[type=text], select {
 	&.percent {
 		background: white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAeBAMAAACcf1DPAAAAJ1BMVEUAAACkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKRvW9ciAAAADHRSTlMAOZbGgBBY7NlwILNagw7UAAAAyUlEQVQoz9XPrw6CUBgF8KOIzj9BOoHNzUSwslmMTgIm5mYwGgg+gFEbwQcw+AAEHoAgfwRk56GUKN98AE64N/x273c+tCBHXupLfzehSzIEVF6bEpTaMgfGnDbFrjBJAS8TY8wnlBIjLoREXymg8CHEfmGQws4hoifOPesw3M3mDVFY8OQWW580fkU1mTpmrNA6ix81p09DTzAoILIv4cXoUkoUw47Rk82HvP15E6R1ebhyjl8BY1oU3Xo8AGq9j5B1ffY3K7QgHxSbQJgYtVbrAAAAAElFTkSuQmCC') right center no-repeat;	
 	}
+}
 
+textarea {
+	height: 200px;
 }
 
 select {

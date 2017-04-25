@@ -1,0 +1,45 @@
+
+// color variables
+$grey: #414042;
+$grey-light: rgba( $grey, .2 );
+
+$blue: #5D94AC;
+$blue-light: rgba( $blue, .2 );
+
+$teal: #27AAE1;
+$teal-light: rgba( $teal, .2 );
+
+$green: #66BD5A;
+$green-light: rgba( $green, .2 );
+
+$lime: #8DC63F;
+$lime-light: rgba( $lime, .2 );
+
+$yellow: #FFF200;
+$yellow-light: rgba( $yellow, .2 );
+
+$tan: #D5DD6D;
+$tan-light: rgba( $tan, .2 );
+
+$red: #D63D41;
+$red-light: rgba( $red, .2 );
+
+
+// background colors
+.bg-blue { background: $blue-light; color: $blue; }
+.bg-teal { background: $teal-light; color: $teal; }
+.bg-green { background: $green-light; color: $green; }
+.bg-lime { background: $lime-light; color: $lime; }
+.bg-red { background: $red-light; color: $red; }
+.bg-grey { background: $grey-light; color: $grey; }
+.bg-tan { background: $tan-light; color: darken( $tan, 40% ); }
+
+// text colors
+.text-blue { color: $blue; }
+.text-teal { color: $teal; }
+.text-green { color: $green; }
+.text-lime { color: $lime; }
+.text-red { color: $red; }
+.text-grey { color: $grey; }
+.text-tan { color: darken( $tan, 40% ); }
+
