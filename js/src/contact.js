@@ -24,6 +24,8 @@ var contact_submit = function( form ) {
 		errors = [],
 		error_div = $( form ).find( ".error" );
 			
+	console.log( url_params ); return;
+
 	error_div.html( "" );
 
 	// check the names
