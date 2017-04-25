@@ -18,7 +18,7 @@ var contact_submit = function( form ) {
 			name: $( form ).find( "input[name=name]" ).val(),
 			email: $( form ).find( "input[name=email]" ).val(),
 			phone: $( form ).find( "input[name=phone]" ).val(),
-			message: $( form ).find( "input[name=message]" ).val(),
+			message: $( form ).find( "textarea[name=message]" ).val(),
 		},
 		url_params = $.param( field ),
 		errors = [],
