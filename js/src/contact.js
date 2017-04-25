@@ -24,7 +24,7 @@ var contact_submit = function( form ) {
 		errors = [],
 		error_div = $( form ).find( ".error" );
 			
-	console.log( url_params ); return;
+	console.log( url_params ); return false;
 
 	error_div.html( "" );
 
