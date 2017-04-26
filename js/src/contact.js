@@ -18,14 +18,12 @@ var contact_submit = function( form ) {
 			name: $( form ).find( "input[name=name]" ).val(),
 			email: $( form ).find( "input[name=email]" ).val(),
 			phone: $( form ).find( "input[name=phone]" ).val(),
-			message: $( form ).find( "textarea[name=message]" ).html(),
+			message: $( form ).find( "textarea" ).val(),
 		},
 		url_params = $.param( field ),
 		errors = [],
 		error_div = $( form ).find( ".error" );
 			
-	console.log( url_params ); return false;
-
 	error_div.html( "" );
 
 	// check the names
